@@ -1,0 +1,8 @@
+1) Vai su app.netlify.com/drop (account gratuito) e trascina TUTTA questa cartella.
+2) Netlify ti da' un indirizzo https://....netlify.app
+3) Apri l'indirizzo dal telefono o dal PC, con internet, UNA volta.
+   iPhone (Safari): tasto Condividi -> "Aggiungi a schermata Home".
+   Android (Chrome): menu a tre puntini -> "Installa app" / "Aggiungi a schermata Home".
+   PC (Chrome/Edge): icona "Installa" nella barra dell'indirizzo.
+4) Da quel momento si apre dall'icona "Rimborsi", anche senza internet.
+Per aggiornare: ricarica la cartella su Netlify (stesso sito). Il telefono prende la nuova versione al prossimo avvio con internet.
