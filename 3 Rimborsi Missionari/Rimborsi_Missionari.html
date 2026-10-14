@@ -714,6 +714,7 @@ function(t){t.__bidiEngine__=t.prototype.__bidiEngine__=function(t){var r,n,i,a,
   function issues() {
     var o = []; if (!allVoci().length) o.push("Aggiungi almeno una spesa."); var tot = 0;
     whoIssues().forEach(function (w) { o.push("Chi sei: manca " + w + "."); });
+    if (totSenza() > 0 && !S.firma) o.push("Manca la firma: è obbligatoria perché hai spese senza ricevuta (autodichiarazione). Torna al passo «Chi sei» e firma nel riquadro.");
     S.cats.forEach(function (c, ci) {
       if (!c.nome.trim()) o.push("La categoria " + (ci + 1) + " non ha un nome.");
       if (!c.voci.length) o.push("La categoria «" + c.nome + "» è vuota: aggiungi una spesa oppure eliminala.");
@@ -769,7 +770,7 @@ function(t){t.__bidiEngine__=t.prototype.__bidiEngine__=function(t){var r,n,i,a,
         '<label class="f">Intestatario (se diverso dal tuo nome)<input id="f_tit" data-g="titolare" value="' + esc(S.titolare) + '" placeholder="' + esc(S.nome || "Nome e cognome") + '" autocomplete="off"></label>' : '') +
       '</div></section>' +
       '<p class="hint" id="reqnote">I campi con * sono obbligatori.</p>' +
-      '<section class="card stack"><b>Firma (facoltativa)</b><span class="hint help">Firma con il dito o con il mouse. Comparirà sulla nota spese e sull\'autodichiarazione.</span><canvas id="sig" style="width:100%;height:150px;border:1px solid var(--line);border-radius:6px;background:#fff;touch-action:none"></canvas><div><button class="btn small" data-act="sigclr" type="button">Cancella la firma</button></div></section>';
+      '<section class="card stack"><b>' + (totSenza() > 0 ? 'Firma * (obbligatoria: hai spese senza ricevuta)' : 'Firma (facoltativa)') + '</b><span class="hint help">Firma con il dito o con il mouse. Comparirà sulla nota spese e sull\'autodichiarazione.</span><canvas id="sig" style="width:100%;height:150px;border:1px solid var(--line);border-radius:6px;background:#fff;touch-action:none"></canvas><div><button class="btn small" data-act="sigclr" type="button">Cancella la firma</button></div></section>';
   }
   function photoThumb(ph) {
     var img = ph.pdf ? '<div class="img">PDF</div>' : '<div class="img" style="background-image:url(\'' + ph.thumb + '\')">' + (ph.bad ? "?" : "") + "</div>";
