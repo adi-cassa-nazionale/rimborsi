@@ -135,15 +135,15 @@ details summary { cursor: pointer; font-weight: 500; min-height: 40px; display: 
     <div class="addrow"><button class="btn small" id="bigBtn" type="button">Testo più grande</button><button class="btn small" id="hintsBtn" type="button">Mostra i suggerimenti nelle pagine</button><button class="btn small" data-act="sample" type="button">Carica un esempio</button><button class="btn small danger" data-act="reset" type="button">Ricomincia da capo</button></div>
     <p class="hint" style="margin:0">Ci vogliono circa 15 minuti. Puoi fermarti quando vuoi: quello che hai scritto resta salvato su questo dispositivo.</p>
     <h3>Prima di cominciare</h3>
-    <ul class="gl"><li>Raccogli tutte le ricevute, le fatture, le carte d'imbarco e le conferme di prenotazione.</li><li>Tieni a portata di mano le spese pagate in un'altra valuta e il cambio che hai usato.</li><li>Conserva gli originali: la Cassa potrebbe chiederti un chiarimento.</li></ul>
+    <ul class="gl"><li>Raccogli tutte le ricevute, le fatture, le carte d'imbarco e le conferme di prenotazione.</li><li>Conserva gli originali: la Cassa potrebbe chiederti un chiarimento.</li></ul>
     <h3>I quattro passi</h3>
-    <ol class="gl"><li><b>Chi sei.</b> Scrivi nome e cognome, il motivo della richiesta e la città. Firma con il dito e premi «Conferma firma» (obbligatoria); se vuoi, aggiungi la tua email per ricevere una copia.</li><li><b>Spese.</b> Scegli una categoria (per esempio viaggio, alloggio, trasporto). Dentro ogni categoria premi «Aggiungi un'altra spesa» quante volte serve: ogni spesa ha data, importo, descrizione e foto della ricevuta.</li><li><b>Controlla.</b> L'app ti mostra tutto in una tabella e ti dice cosa manca. Rileggi gli importi.</li><li><b>Invia.</b> L'app prepara i file (nota spese, giustificativi e un elenco in CSV). Premi «Condividi» e scegli Mail o WhatsApp. Se non si apre, scarica i file e allegali alla tua email.</li></ol>
+    <ol class="gl"><li><b>Chi sei.</b> Scrivi nome e cognome, il motivo della richiesta e la città. Firma con il dito e premi «Conferma firma» (obbligatoria); se vuoi, aggiungi la tua email per ricevere una copia.</li><li><b>Spese.</b> Scegli una categoria (per esempio viaggio, alloggio, trasporto). Dentro ogni categoria premi «Aggiungi un'altra spesa» quante volte serve: ogni spesa ha data, importo, descrizione e foto della ricevuta.</li><li><b>Controlla.</b> L'app ti mostra tutto in una tabella e ti dice cosa manca. Rileggi gli importi.</li><li><b>Invia.</b> L'app prepara i file (nota spese, giustificativi e un elenco in CSV). Premi «Scrivi la email»: il file ZIP si salva e si apre la email già compilata, con i destinatari giusti. Allega il file con la graffetta e invia.</li></ol>
     <h3>Foto delle ricevute</h3>
     <ul class="gl"><li>Appoggia lo scontrino su un tavolo, con buona luce e senza ombre. Inquadra tutto il foglio.</li><li>Una foto per ogni ricevuta. Se ha più pagine, aggiungi più foto alla stessa spesa.</li><li>Controlla che data e importo si leggano. Se la foto è storta usa il pulsante ↻.</li><li>Non preoccuparti del peso: l'app riduce le foto da sola.</li><li>Puoi caricare anche PDF già pronti, come le conferme di Booking o i biglietti.</li></ul>
     <h3>Scrivere bene le voci</h3>
     <ul class="gl"><li>Descrizioni brevi e chiare: «Biglietti aerei Roma - Lisbona», non solo «Voli».</li><li>Una voce per ogni pagamento, con l'importo che hai pagato davvero.</li><li>Se un'unica ricevuta comprende cose diverse, scrivi la voce una volta sola con il totale.</li></ul>
     <h3>Casi particolari</h3>
-    <ul class="gl"><li><b>Senza ricevuta.</b> Scegli «Senza ricevuta»: la spesa finisce nell'autodichiarazione, che l'app prepara con la tua firma.</li><li><b>Altra valuta.</b> Premi «Ho pagato in un'altra valuta», scrivi importo, valuta e cambio: gli euro si calcolano da soli.</li><li><b>Errori.</b> Puoi cambiare tutto finché non hai inviato. Per eliminare una spesa tocca due volte il pulsante rosso.</li></ul>
+    <ul class="gl"><li><b>Senza ricevuta.</b> Scegli «Senza ricevuta»: la spesa finisce nell'autodichiarazione, che l'app prepara con la tua firma.</li><li><b>Evento e operazione.</b> Se la spesa riguarda un evento, scrivilo in «Evento». Se oltre alla spesa è stata eseguita anche l'operazione, scegli «Sì, operazione effettuata».</li><li><b>Errori.</b> Puoi cambiare tutto finché non hai inviato. Per eliminare una spesa tocca due volte il pulsante rosso.</li></ul>
     <h3>Dopo l'invio</h3>
     <ul class="gl"><li>Controlla di aver ricevuto la copia nella tua email, se l'hai indicata.</li><li>L'ufficio controlla i documenti e ti scrive se serve qualcosa.</li><li>Se usi un computer o un telefono non tuo, premi «Cancella i dati da questo dispositivo» alla fine.</li></ul>
     <h3>Privacy</h3>
@@ -626,15 +626,16 @@ function(t){t.__bidiEngine__=t.prototype.__bidiEngine__=function(t){var r,n,i,a,
 <script>
 (function () {
   "use strict";
-  var DEST = "", CC = "", OLD_DEST = ["giraldimarco96@gmail.com", "direzione.missioniestere@assembleedidio.org,cassanazionale@assembleedidio.org,ufficiocassa@assembleedidio.org"]; /* destinatari ancora da inserire */
+  var OLD_DEST = ["giraldimarco96@gmail.com", "direzione.missioniestere@assembleedidio.org,cassanazionale@assembleedidio.org,ufficiocassa@assembleedidio.org"];
   var LEVELS = [
     { k: "alta", px: 2000, q: 0.8, name: "Alta" },
     { k: "norm", px: 1500, q: 0.7, name: "Normale" },
     { k: "leg", px: 1100, q: 0.6, name: "Leggera" },
     { k: "min", px: 850, q: 0.5, name: "Minima" }
   ];
-  var PROFILE = /*PROFILE*/{"k": "PASTORI", "pre": "PA", "qual": "Pastore", "h1": "Rimborsi Pastori", "sub": "CASSA NAZIONALE", "dest": "Cassa Nazionale ADI", "sugg": ["Viaggio e trasferte", "Vitto e alloggio", "Formazione e convegni", "Spese di ministero", "Altro"]}/*ENDPROFILE*/;
-  var SUGG = PROFILE.sugg; 
+  var PROFILE = /*PROFILE*/{"k": "PASTORI", "pre": "PA", "qual": "Pastore", "h1": "Rimborsi Pastori", "sub": "CASSA NAZIONALE", "dest": "Cassa Nazionale ADI", "to": "cassanazionale@assembleedidio.org,ufficiocassa@assembleedidio.org", "cc": "", "sugg": ["Viaggio e trasferte", "Vitto e alloggio", "Formazione e convegni", "Spese di ministero", "Altro"]}/*ENDPROFILE*/;
+  var KEY = PROFILE.k === "MISSIONARI" ? "rimb_state" : "rimb_state_" + PROFILE.k, DBN = PROFILE.k === "MISSIONARI" ? "rimborsi" : "rimborsi_" + PROFILE.k;
+  var SUGG = PROFILE.sugg, DEST = PROFILE.to || "", CC = PROFILE.cc || ""; 
   var NAVY = [0, 47, 108], BLUE = [68, 130, 196], LIGHT = [243, 245, 250], ZEBRA = [246, 247, 251], TOT = [226, 232, 244];
   var $ = function (id) { return document.getElementById(id); };
   var uid = function () { return Math.random().toString(36).slice(2, 9); };
@@ -645,13 +646,13 @@ function(t){t.__bidiEngine__=t.prototype.__bidiEngine__=function(t){var r,n,i,a,
   function esc(s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
   function kb(n) { return n >= 1048576 ? (n / 1048576).toFixed(1).replace(".", ",") + " MB" : Math.max(1, Math.round(n / 1024)) + " KB"; }
   function slug(s) { return String(s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^A-Za-z0-9]+/g, "_").replace(/^_+|_+$/g, "").slice(0, 40) || "file"; }
-  function fullDesc(v) { return v.desc.trim() + (v.alt && num(v.val) > 0 && num(v.rate) > 0 ? " (" + eur(num(v.val)) + " " + (v.cur || "valuta locale").trim() + " al cambio di " + String(v.rate).trim() + " per 1 euro)" : ""); }
+  function fullDesc(v) { return v.desc.trim() + (v.ev && v.ev.trim() ? " - Evento: " + v.ev.trim() : "") + (v.op ? " (operazione effettuata)" : ""); }
   function wa(s) { return String(s == null ? "" : s).replace(/[^ -~ -ÿ€]/g, "?"); }
   function tick() { return new Promise(function (r) { setTimeout(r, 0); }); }
 
   /* ---------- stato ---------- */
   var S = fresh(), photos = {}, built = null, pending = null, sendInfo = null;
-  function fresh() { return { step: 0, nome: "", nm: "", cg: "", cod: "", tel: "", oggetto: "", luogo: "", emailMiss: "", titolare: "", ibanIT: "", ibanEE: "", bic: "", conto: "", ibanMode: "arch", data: todayISO(), formato: "uff", firma: "", firmaAR: 0.3, level: "auto", zip: false, limiteMb: 20, ts: Date.now(), dest: DEST, cc: CC, cats: [] }; }
+  function fresh() { return { step: 0, nome: "", nm: "", cg: "", cod: "", tel: "", oggetto: "", luogo: "", emailMiss: "", titolare: "", ibanIT: "", ibanEE: "", bic: "", conto: "", ibanMode: "arch", data: todayISO(), formato: "uff", firma: "", firmaAR: 0.3, level: "auto", zip: false, limiteMb: 20, ts: Date.now(), prof: PROFILE.k, dest: DEST, cc: CC, cats: [] }; }
   function codice() { if (!S.cod) { var A = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789", r = ""; try { var u = new Uint8Array(4); crypto.getRandomValues(u); for (var i = 0; i < 4; i++) r += A[u[i] % A.length]; } catch (e) { for (var j = 0; j < 4; j++) r += A[Math.floor(Math.random() * A.length)]; } S.cod = PROFILE.pre + "-" + todayISO().slice(2).replace(/-/g, "") + "-" + r; save(); } return S.cod; }
   async function sha256(b) { try { var h = await crypto.subtle.digest("SHA-256", b), a = new Uint8Array(h), o = ""; for (var i = 0; i < a.length; i++) o += a[i].toString(16).padStart(2, "0"); return o; } catch (e) { return ""; } }
   function allVoci() { var o = []; S.cats.forEach(function (c) { c.voci.forEach(function (v) { o.push({ c: c, v: v }); }); }); return o; }
@@ -659,8 +660,8 @@ function(t){t.__bidiEngine__=t.prototype.__bidiEngine__=function(t){var r,n,i,a,
   function totSenza() { return allVoci().reduce(function (a, x) { return a + (x.v.senza ? num(x.v.imp) : 0); }, 0); }
   function ls(k, v) { try { if (v === undefined) return localStorage.getItem(k); if (v === null) localStorage.removeItem(k); else localStorage.setItem(k, v); } catch (e) {} return null; }
   var saveT = null;
-  function save() { clearTimeout(saveT); saveT = setTimeout(function () { S.ts = Date.now(); ls("rimb_state", JSON.stringify(S)); }, 300); }
-  function idb() { return new Promise(function (res, rej) { try { var r = indexedDB.open("rimborsi", 1); r.onupgradeneeded = function () { r.result.createObjectStore("p", { keyPath: "id" }); }; r.onsuccess = function () { res(r.result); }; r.onerror = function () { rej(r.error); }; } catch (e) { rej(e); } }); }
+  function save() { clearTimeout(saveT); saveT = setTimeout(function () { S.ts = Date.now(); ls(KEY, JSON.stringify(S)); }, 300); }
+  function idb() { return new Promise(function (res, rej) { try { var r = indexedDB.open(DBN, 1); r.onupgradeneeded = function () { r.result.createObjectStore("p", { keyPath: "id" }); }; r.onsuccess = function () { res(r.result); }; r.onerror = function () { rej(r.error); }; } catch (e) { rej(e); } }); }
   function idbPut(ph) { idb().then(function (d) { d.transaction("p", "readwrite").objectStore("p").put({ id: ph.id, blob: ph.blob, name: ph.name, type: ph.type, rot: ph.rot }); }).catch(function () {}); }
   function idbDel(id) { idb().then(function (d) { d.transaction("p", "readwrite").objectStore("p").delete(id); }).catch(function () {}); }
   function idbClear() { idb().then(function (d) { d.transaction("p", "readwrite").objectStore("p").clear(); }).catch(function () {}); }
@@ -791,8 +792,9 @@ function(t){t.__bidiEngine__=t.prototype.__bidiEngine__=function(t){var r,n,i,a,
       '<label class="f">Data<input type="date" data-f="data" value="' + esc(v.data) + '"></label>' +
       '<label class="f">Importo in euro<input class="num" inputmode="decimal" data-f="imp" value="' + esc(v.imp) + '" placeholder="0,00"></label></div>' +
       '<label class="f">Che cosa hai pagato<input data-f="desc" value="' + esc(v.desc) + '" placeholder="es. Biglietti aerei Roma - Lisbona"></label>' +
-      (v.alt ? '<div class="fields two"><label class="f">Importo pagato<input class="num" inputmode="decimal" data-f="val" value="' + esc(v.val) + '" placeholder="0,00"></label><label class="f">Valuta<input data-f="cur" value="' + esc(v.cur) + '" placeholder="es. USD" autocapitalize="characters"></label></div><label class="f">Cambio: quanti ' + esc(v.cur || "della valuta") + ' per 1 euro<input class="num" inputmode="decimal" data-f="rate" value="' + esc(v.rate) + '" placeholder="es. 1,08"></label><div class="hint help">L\'importo in euro si calcola da solo. Puoi correggerlo a mano nel campo «Importo in euro».</div>' : "") +
-      '<div><button type="button" class="btn small" data-act="alt">' + (v.alt ? "Ho pagato in euro" : "Ho pagato in un\'altra valuta (es. dollari)") + '</button></div>' +
+      '<label class="f">Evento (facoltativo)<input data-f="ev" value="' + esc(v.ev || "") + '" placeholder="es. Convegno nazionale, culto di inaugurazione"></label>' +
+      '<div class="seg" role="group" aria-label="Operazione effettuata"><button type="button" data-act="opr" data-val="0" aria-pressed="' + (!v.op) + '">Solo la spesa</button><button type="button" data-act="opr" data-val="1" aria-pressed="' + (!!v.op) + '">Sì, operazione effettuata</button></div>' +
+      '<div class="hint help">«Sì, operazione effettuata»: oltre alla spesa è stata eseguita anche l\'operazione collegata.</div>' +
       '<div class="seg" role="group" aria-label="Ricevuta"><button type="button" data-act="rec" data-val="1" aria-pressed="' + (!v.senza) + '">Ho la ricevuta</button><button type="button" data-act="rec" data-val="0" aria-pressed="' + v.senza + '">Senza ricevuta</button></div>' +
       (v.senza ? '<div class="hint help">Questa spesa sarà indicata nell\'autodichiarazione che l\'app prepara per te.</div>' :
         '<div class="thumbs">' + v.foto.map(function (id) { return photos[id] ? photoThumb(photos[id]) : ""; }).join("") + '</div><div class="addrow"><button type="button" class="btn" data-act="cam">Scatta una foto</button><button type="button" class="btn" data-act="gal">Scegli dalla galleria o PDF</button></div>' + (miss ? '<div class="hint">Serve almeno una foto della ricevuta.</div>' : "")) +
@@ -835,7 +837,7 @@ function(t){t.__bidiEngine__=t.prototype.__bidiEngine__=function(t){var r,n,i,a,
 
   /* ---------- eventi ---------- */
   function findVC(el) { var a = el.closest("[data-v]"); var cc = el.closest("[data-c]"); if (!cc) return {}; var c = S.cats.filter(function (x) { return x.id === cc.dataset.c; })[0]; var v = a && c ? c.voci.filter(function (x) { return x.id === a.dataset.v; })[0] : null; return { c: c, v: v, a: a }; }
-  function newVoce() { var last = allVoci().slice(-1)[0]; return { id: uid(), data: last ? last.v.data : S.data, desc: "", imp: "", senza: false, foto: [], alt: false, val: "", cur: "", rate: "" }; }
+  function newVoce() { var last = allVoci().slice(-1)[0]; return { id: uid(), data: last ? last.v.data : S.data, desc: "", imp: "", senza: false, foto: [], ev: "", op: false }; }
   var armed = null, armT = null;
   function arm(btn, label) { if (armed === btn) { armed = null; return true; } if (armed) { armed.textContent = armed.dataset.l; armed.classList.remove("armed"); } armed = btn; btn.dataset.l = btn.textContent; btn.textContent = label; btn.classList.add("armed"); clearTimeout(armT); armT = setTimeout(function () { if (armed === btn) { btn.textContent = btn.dataset.l; btn.classList.remove("armed"); armed = null; } }, 3500); return false; }
   document.addEventListener("input", function (e) {
@@ -843,7 +845,7 @@ function(t){t.__bidiEngine__=t.prototype.__bidiEngine__=function(t){var r,n,i,a,
     if (t.dataset.iban) { S[t.dataset.g] = ibanNorm(t.value); var st = t.parentNode.querySelector(".ibst"); if (st) { var okk = ibanOk(S[t.dataset.g]); st.textContent = !S[t.dataset.g] ? "" : okk ? "IBAN valido ✓" : "IBAN non valido: ricontrolla"; st.className = "ibst " + (!S[t.dataset.g] ? "" : okk ? "ok" : "ko"); } save(); updBar(); return; }
     if (t.dataset.g) { S[t.dataset.g] = t.value; if (t.dataset.g === "nm" || t.dataset.g === "cg") S.nome = (S.nm.trim() + " " + S.cg.trim()).trim(); save(); updBar(); return; }
     var f = t.dataset.f; if (!f) return; var x = findVC(t);
-    if (f === "cnome" && x.c) { x.c.nome = t.value; } else if (x.v) { x.v[f] = t.value; if (f === "val" || f === "rate") { if (num(x.v.val) > 0 && num(x.v.rate) > 0) { x.v.imp = (num(x.v.val) / num(x.v.rate)).toFixed(2).replace(".", ","); var ie = x.a.querySelector('[data-f="imp"]'); if (ie) ie.value = x.v.imp; } } if (f === "imp" || f === "val" || f === "rate") { var s = $("main").querySelector('[data-sub="' + x.c.id + '"]'); if (s) s.textContent = "€ " + eur(x.c.voci.reduce(function (a, v) { return a + num(v.imp); }, 0)); } }
+    if (f === "cnome" && x.c) { x.c.nome = t.value; } else if (x.v) { x.v[f] = t.value; if (f === "imp") { var s = $("main").querySelector('[data-sub="' + x.c.id + '"]'); if (s) s.textContent = "€ " + eur(x.c.voci.reduce(function (a, v) { return a + num(v.imp); }, 0)); } }
     save(); updBar();
   });
   document.addEventListener("click", async function (e) {
@@ -854,12 +856,12 @@ function(t){t.__bidiEngine__=t.prototype.__bidiEngine__=function(t){var r,n,i,a,
     if (act === "sigclr") { S.firma = ""; initSig(); save(); updBar(); return; }
     if (act === "sample") { await loadSample(); S.step = 1; toggleGuide(false); render(); return; }
     if (act === "newreq") { if (!arm(b, "Tocca ancora: cancello questa richiesta")) return; var keep = { nome: S.nome, nm: S.nm, cg: S.cg, tel: S.tel, luogo: S.luogo, emailMiss: S.emailMiss, firma: S.firma, firmaAR: S.firmaAR, dest: S.dest, cc: S.cc, formato: S.formato }; S = Object.assign(fresh(), keep); photos = {}; idbClear(); built = null; save(); toggleGuide(false); render(); return; }
-    if (act === "reset") { if (!arm(b, "Tocca ancora per cancellare tutto")) return; S = fresh(); photos = {}; ls("rimb_state", null); idbClear(); toggleGuide(false); render(); return; }
+    if (act === "reset") { if (!arm(b, "Tocca ancora per cancellare tutto")) return; S = fresh(); photos = {}; ls(KEY, null); idbClear(); toggleGuide(false); render(); return; }
     if (act === "addc") { var n = b.dataset.n; S.cats.push({ id: uid(), nome: n, voci: [newVoce()] }); save(); render(); var ins = $("main").querySelectorAll('[data-f="cnome"]'); if (!n && ins.length) ins[ins.length - 1].focus(); return; }
     if (act === "addv" && x.c) { x.c.voci.push(newVoce()); save(); render(); return; }
     if (act === "delv" && x.v) { if (!arm(b, "Tocca ancora per eliminare")) return; x.v.foto.forEach(function (id) { delete photos[id]; idbDel(id); }); x.c.voci = x.c.voci.filter(function (v) { return v !== x.v; }); save(); render(); return; }
     if (act === "delc" && x.c) { if (!arm(b, "Tocca ancora per eliminare")) return; x.c.voci.forEach(function (v) { v.foto.forEach(function (id) { delete photos[id]; idbDel(id); }); }); S.cats = S.cats.filter(function (c) { return c !== x.c; }); save(); render(); return; }
-    if (act === "alt" && x.v) { x.v.alt = !x.v.alt; save(); render(); return; }
+    if (act === "opr" && x.v) { x.v.op = b.dataset.val === "1"; save(); render(); return; }
     if (act === "rec" && x.v) { x.v.senza = b.dataset.val === "0"; save(); render(); return; }
     if (act === "cam" || act === "gal") { pending = { c: x.c.id, v: x.v.id }; (act === "cam" ? $("camIn") : $("galIn")).click(); return; }
     if (act === "delph" || act === "rot") {
@@ -1048,8 +1050,8 @@ function(t){t.__bidiEngine__=t.prototype.__bidiEngine__=function(t){var r,n,i,a,
   function setPg(p, t) { var a = $("pg"), b = $("pgt"); if (a) a.value = p; if (b) b.textContent = t; }
   function buildCsv(ref) {
     var q = function (v) { return '"' + String(v == null ? "" : v).replace(/"/g, '""') + '"'; }, nm = function (n) { return eur(n).replace(/\./g, ""); };
-    var cs = contoSel(), rows = [["Codice", "Richiedente", "Oggetto", "Categoria", "Data", "Descrizione", "Importo (EUR)", "Importo in valuta", "Valuta", "Cambio (per 1 EUR)", "Giustificativo", "Riferimento", "Conto di accredito", "IBAN variato", "Nuovo IBAN", "Intestatario", "BIC/SWIFT"].map(q).join(";")];
-    S.cats.forEach(function (c) { c.voci.forEach(function (v) { rows.push([codice(), S.nome, S.oggetto, c.nome, itDate(v.data), v.desc.trim(), nm(num(v.imp)), v.alt && num(v.val) > 0 ? nm(num(v.val)) : "", v.alt ? (v.cur || "").trim() : "", v.alt ? String(v.rate).trim() : "", v.senza ? "Autodichiarazione" : "Ricevuta", ref[v.id] || "", cs ? cs.lab : "", S.ibanMode === "new" ? "Sì" : "No", S.ibanMode === "new" && cs ? ibanNorm(cs.iban) : "", S.ibanMode === "new" ? (S.titolare.trim() || S.nome) : "", S.ibanMode === "new" && S.conto === "EE" ? S.bic.trim().toUpperCase() : ""].map(q).join(";")); }); });
+    var cs = contoSel(), rows = [["Codice", "Richiedente", "Oggetto", "Categoria", "Data", "Descrizione", "Evento", "Operazione effettuata", "Importo (EUR)", "Giustificativo", "Riferimento", "Conto di accredito", "IBAN variato", "Nuovo IBAN", "Intestatario", "BIC/SWIFT"].map(q).join(";")];
+    S.cats.forEach(function (c) { c.voci.forEach(function (v) { rows.push([codice(), S.nome, S.oggetto, c.nome, itDate(v.data), v.desc.trim(), (v.ev || "").trim(), v.op ? "Sì" : "No", nm(num(v.imp)), v.senza ? "Autodichiarazione" : "Ricevuta", ref[v.id] || "", cs ? cs.lab : "", S.ibanMode === "new" ? "Sì" : "No", S.ibanMode === "new" && cs ? ibanNorm(cs.iban) : "", S.ibanMode === "new" ? (S.titolare.trim() || S.nome) : "", S.ibanMode === "new" && S.conto === "EE" ? S.bic.trim().toUpperCase() : ""].map(q).join(";")); }); });
     return new TextEncoder().encode("﻿" + rows.join("\r\n") + "\r\n");
   }
   async function mergePdfs(list) { var P = PDFLib, doc = await P.PDFDocument.create(); for (var i = 0; i < list.length; i++) { var src = await P.PDFDocument.load(list[i], { ignoreEncryption: true }), cp = await doc.copyPages(src, src.getPageIndices()); cp.forEach(function (p) { doc.addPage(p); }); } return { bytes: await doc.save(), pages: doc.getPageCount() }; }
@@ -1108,9 +1110,9 @@ function(t){t.__bidiEngine__=t.prototype.__bidiEngine__=function(t){var r,n,i,a,
     o += "\n" + (z ? "In allegato trovate un unico file ZIP (" + built.zipName + ") con i seguenti " + n + " file:" : "In allegato trovate i seguenti " + n + " file:") + "\n";
     f.forEach(function (x) { o += "  - " + x.name + "\n"; });
     if (totSenza() > 0) o += "\nPer la somma di " + eur(totSenza()) + " euro priva di ricevuta ho allegato un'autodichiarazione.\n";
-    return o + "\nRimango a disposizione per chiarimenti.\n\nIn Cristo,\n" + S.nome + "\n";
+    return o + "\nCodice della richiesta: " + codice() + "\n\nRimango a disposizione per chiarimenti.\n\nIn Cristo,\n" + S.nome + "\n";
   }
-  function subject() { return "Richiesta RIMBORSO - " + S.oggetto + " - " + S.nome; }
+  function subject() { return "Richiesta RIMBORSO [" + codice() + "] - " + S.oggetto + " - " + S.nome; }
 
   /* ---------- invio ---------- */
   async function saveFile(name, blob) {
@@ -1118,21 +1120,28 @@ function(t){t.__bidiEngine__=t.prototype.__bidiEngine__=function(t){var r,n,i,a,
     if (dl) { try { await dl.save({ filename: name, data: blob }); return true; } catch (e) { return false; } }
     var a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = name; document.body.appendChild(a); a.click(); a.remove(); setTimeout(function () { URL.revokeObjectURL(a.href); }, 4000); return true;
   }
+  function wrap76(t) { return t.replace(/.{1,76}/g, "$&\r\n"); }
+  function encWord(t) { var parts = [], a = Array.from(t); for (var i = 0; i < a.length; i += 10) parts.push("=?UTF-8?B?" + btoa(unescape(encodeURIComponent(a.slice(i, i + 10).join("")))) + "?="); return parts.join("\r\n "); }
+  async function buildEml(b) {
+    var bd = "=_rimb_" + Math.random().toString(36).slice(2), zb = await b64(b.zip), body = btoa(unescape(encodeURIComponent(mailText(true).replace(/\r?\n/g, "\r\n")))), nm = b.zipName.replace(/[^A-Za-z0-9._-]+/g, "_"), h = [];
+    h.push("X-Unsent: 1"); if (S.dest) h.push("To: " + S.dest.split(/\s*,\s*/).join(", ")); if (S.cc) h.push("Cc: " + S.cc.split(/\s*,\s*/).join(", "));
+    h.push("Subject: " + encWord(subject()), "MIME-Version: 1.0", 'Content-Type: multipart/mixed; boundary="' + bd + '"', "");
+    var m = h.join("\r\n") + "\r\n--" + bd + '\r\nContent-Type: text/plain; charset="utf-8"\r\nContent-Transfer-Encoding: base64\r\n\r\n' + wrap76(body) + "--" + bd + '\r\nContent-Type: application/zip; name="' + nm + '"\r\nContent-Transfer-Encoding: base64\r\nContent-Disposition: attachment; filename="' + nm + '"\r\n\r\n' + wrap76(zb) + "--" + bd + "--\r\n";
+    return { name: "Email_" + codice() + ".eml", blob: new Blob([m], { type: "message/rfc822" }) };
+  }
   function b64(blob) { return new Promise(function (res) { var r = new FileReader(); r.onload = function () { res(String(r.result).split(",")[1]); }; r.readAsDataURL(blob); }); }
   function mimeOf(n) { return /\.csv$/i.test(n) ? "text/csv" : /\.zip$/i.test(n) ? "application/zip" : "application/pdf"; }
-  function composeUrl(z) { return "https://mail.google.com/mail/?view=cm&fs=1&to=" + encodeURIComponent(S.dest) + (S.cc ? "&cc=" + encodeURIComponent(S.cc) : "") + "&su=" + encodeURIComponent(subject()) + "&body=" + encodeURIComponent(("[ALLEGA IL FILE " + built.zipName + " E CANCELLA QUESTA RIGA PRIMA DI INVIARE]\n\n" + mailText(z)).slice(0, 1900)); }
-  function openLink(url) { var a = document.createElement("a"); a.href = url; a.target = "_blank"; a.rel = "noopener"; document.body.appendChild(a); a.click(); a.remove(); }
   function destHtml() { if (!S.dest && !S.cc) return "Destinatari: <b>non ancora impostati</b>. Li scegli tu nella email, oppure li scrivi in «Impostazioni»."; return "A: <b>" + esc((S.dest || "").split(/\s*,\s*/).join(", ")) + "</b>" + (S.cc ? "<br>Cc: <b>" + esc(S.cc.split(/\s*,\s*/).join(", ")) + "</b>" : ""); }
   function showSend() {
     var b = built, pct = Math.min(100, Math.round(b.total / b.lim * 100)), over = b.total > b.lim;
     var h = '<section class="card stack"><h2>Tutto pronto</h2><ul class="files">' + b.files.map(function (f) { return "<li><span>" + esc(f.name) + "</span><span>" + kb(f.bytes.length) + "</span></li>"; }).join("") + '</ul>' +
       '<div class="meter' + (over ? " hi" : "") + '"><i style="width:' + pct + '%"></i></div><span class="hint">Totale ' + kb(b.total) + " in " + b.files.length + " file." + (over ? " Attenzione: supera " + S.limiteMb + " MB, potrebbe non partire per email." : "") + "</span></section>" +
       '<section class="card stack"><h2>Invia</h2><div class="hint" id="destTxt" style="overflow-wrap:anywhere">' + destHtml() + '</div>' +
-      '<button class="btn primary" id="shareB" type="button">Condividi (WhatsApp, Mail…)</button>' +
-            '<a class="btn" style="text-decoration:none;display:flex;align-items:center;justify-content:center" href="mailto:' + encodeURIComponent(S.dest).replace(/%2C/g, ",") + '?' + (S.cc ? 'cc=' + encodeURIComponent(S.cc).replace(/%2C/g, ",") + '&' : '') + 'subject=' + encodeURIComponent(subject()) + '&body=' + encodeURIComponent(mailText(true).slice(0, 1500)) + '">Scrivi la email (poi allega lo ZIP)</a>' +
+      '<button class="btn primary" id="mailB" type="button">Scrivi la email</button>' +
+      '<button class="btn" id="emlB" type="button">Bozza email con allegato (.eml)</button><div class="hint help">La bozza .eml si apre in Outlook, Apple Mail o Thunderbird già con destinatari, testo e allegato. Gmail non la apre.</div>' +
       '<details class="menu"><summary class="btn">Scarica i file ▾</summary><div class="stack" style="margin-top:8px"><button class="btn" id="dlZip" type="button">Un unico file ZIP</button><button class="btn" id="dlAll" type="button">I file uno a uno</button></div></details>' +
       '<div id="dlRes" class="hint"></div></section>' +
-      '<details class="card"><summary>Testo della email</summary><div class="stack" style="margin-top:10px"><div class="hint">Oggetto: <b>' + esc(subject()) + '</b></div><div class="mail" id="mailTxt">' + esc(mailText()) + '</div><div class="addrow"><button class="btn small" id="cpMail" type="button">Copia il testo</button><button class="btn small" id="cpDest" type="button">Copia l\'indirizzo</button><a class="btn small" style="text-decoration:none;display:inline-flex;align-items:center" href="mailto:' + encodeURIComponent(S.dest) + '?subject=' + encodeURIComponent(subject()) + '&body=' + encodeURIComponent(mailText().slice(0, 1500)) + '">Apri il programma di posta</a></div></div></details>' +
+      '<details class="card"><summary>Testo della email</summary><div class="stack" style="margin-top:10px"><div class="hint">Oggetto: <b>' + esc(subject()) + '</b></div><div class="mail" id="mailTxt">' + esc(mailText()) + '</div><div class="addrow"><button class="btn small" id="cpMail" type="button">Copia il testo</button><button class="btn small" id="cpDest" type="button">Copia l\'indirizzo</button></div></div></details>' +
       '<details class="card"><summary>Impostazioni</summary><div class="fields" style="margin-top:10px"><label class="f">A: (più indirizzi separati da virgola)<input id="s_dest" type="email" multiple value="' + esc(S.dest) + '"></label><label class="f">Cc: (facoltativo)<input id="s_cc" type="email" multiple value="' + esc(S.cc || "") + '"></label><label class="f">Formato dei file<select id="s_fmt"><option value="uff"' + (S.formato !== "sep" ? " selected" : "") + '>2 file: Nota spese + Giustificativi uniti (consigliato)</option><option value="sep"' + (S.formato === "sep" ? " selected" : "") + '>File separati: nota, autodichiarazione, una per categoria</option></select></label><label class="f">Qualità delle foto<select id="s_lvl"><option value="auto">Automatica (consigliata)</option>' + LEVELS.map(function (l) { return '<option value="' + l.k + '"' + (S.level === l.k ? " selected" : "") + ">" + l.name + "</option>"; }).join("") + '</select></label><button class="btn" id="s_re" type="button">Rifai i file con queste impostazioni</button></div></details>' +
       '<section class="card stack"><b>Hai finito?</b><span class="hint">Dopo che la email è partita puoi iniziare una nuova richiesta o cancellare i dati da questo dispositivo. In ogni caso i dati si cancellano da soli dopo 30 giorni senza usarli.</span><div class="addrow"><button class="btn primary" data-act="newreq" type="button">Nuova richiesta</button><button class="btn danger" data-act="reset" type="button">Cancella tutto</button></div><span class="hint">«Nuova richiesta» tiene il tuo nome, la città, la firma e gli indirizzi, e cancella solo le spese e le foto di questa richiesta. «Cancella tutto» toglie anche i tuoi dati.</span></section>';
     $("main").innerHTML = h;
@@ -1143,15 +1152,13 @@ function(t){t.__bidiEngine__=t.prototype.__bidiEngine__=function(t){var r,n,i,a,
     $("s_re").addEventListener("click", function () { S.level = $("s_lvl").value; S.formato = $("s_fmt").value; save(); $("main").innerHTML = viewSend(); startBuild(); });
     $("dlZip").addEventListener("click", async function () { var ok = await saveFile(b.zipName, b.zip); $("dlRes").textContent = ok ? "Salvato: " + b.zipName : "Salvataggio annullato."; });
     $("dlAll").addEventListener("click", async function () { var n = 0; for (var i = 0; i < b.files.length; i++) { if (await saveFile(b.files[i].name, new Blob([b.files[i].bytes], { type: mimeOf(b.files[i].name) }))) n++; } $("dlRes").textContent = n + (n === 1 ? " file salvato." : " file salvati."); });
-    $("shareB").addEventListener("click", async function () {
-      var out = $("dlRes"), pdfs = b.files.map(function (f) { return new File([f.bytes], f.name, { type: mimeOf(f.name) }); }), zipf = new File([b.zip], b.zipName, { type: "application/zip" });
-      try {
-        if (navigator.share && navigator.canShare) { var sets = [[zipf], pdfs]; for (var k = 0; k < sets.length; k++) { if (navigator.canShare({ files: sets[k] })) { await navigator.share({ files: sets[k], title: subject(), text: mailText(k === 0) }); out.innerHTML = "Condivisione aperta. <b>Quando la email è partita, premi «Cancella i dati» qui sotto</b> se il dispositivo non è solo tuo."; return; } } }
-      } catch (e) { if (e && e.name === "AbortError") { out.textContent = "Condivisione annullata."; return; } }
-      openLink(composeUrl(true));
-      var ok = await saveFile(b.zipName, b.zip);
-      out.innerHTML = '<ul class="notes"><li class="warn"><b>Gli allegati vanno aggiunti a mano.</b> Da un link, Gmail non permette di allegare file. ' + (ok ? "Il file <b>" + esc(b.zipName) + "</b> è stato salvato nella cartella Download. " : "Usa «Scarica i file» per salvarlo. ") + 'Nella finestra di Gmail premi la graffetta e scegli quel file' + (ok ? ', oppure trascina qui sotto il file dentro la email:' : ".") + '</li></ul>' + (ok ? '<span class="chip" id="dragZip" draggable="true" style="display:block;border-radius:6px;text-align:center;overflow-wrap:anywhere;cursor:grab">Trascina nella email: ' + esc(b.zipName) + "</span>" : "");
-      var dz = $("dragZip"); if (dz) { var zu = URL.createObjectURL(b.zip); dz.addEventListener("dragstart", function (ev) { try { ev.dataTransfer.setData("DownloadURL", "application/zip:" + b.zipName + ":" + zu); } catch (x) {} }); }
+    $("mailB").addEventListener("click", async function () {
+      var out = $("dlRes"), ok = await saveFile(b.zipName, b.zip);
+      out.innerHTML = '<ul class="notes"><li class="warn"><b>Allega il file alla email.</b> ' + (ok ? "Il file <b>" + esc(b.zipName) + "</b> è stato salvato nei Download. " : "Usa «Scarica i file» per salvarlo. ") + "Nella email premi la graffetta e scegli quel file. Quando la email è partita, cancella i dati qui sotto se il dispositivo non è solo tuo.</li></ul>";
+      location.href = "mailto:" + encodeURIComponent(S.dest).replace(/%2C/g, ",") + "?" + (S.cc ? "cc=" + encodeURIComponent(S.cc).replace(/%2C/g, ",") + "&" : "") + "subject=" + encodeURIComponent(subject()) + "&body=" + encodeURIComponent(mailText(true).slice(0, 1500));
+    });
+    $("emlB").addEventListener("click", async function () {
+      var out = $("dlRes"); out.textContent = "Preparo la bozza…"; try { var e = await buildEml(b), ok = await saveFile(e.name, e.blob); out.innerHTML = ok ? "Salvata la bozza <b>" + esc(e.name) + "</b>. Aprila con Outlook, Apple Mail o Thunderbird: trovi destinatari, testo e allegato già pronti. Con Gmail usa invece «Scrivi la email»." : "Salvataggio annullato."; } catch (x) { out.textContent = "Non sono riuscito a preparare la bozza. Usa «Scrivi la email»."; }
     });
     $("cpMail").addEventListener("click", function () { copy(mailText(), $("cpMail")); });
     $("cpDest").addEventListener("click", function () { if (!S.dest && !S.cc) { $("cpDest").textContent = "Nessun indirizzo impostato"; return; } copy(S.dest + (S.cc ? ", " + S.cc : ""), $("cpDest")); });
@@ -1169,7 +1176,7 @@ function(t){t.__bidiEngine__=t.prototype.__bidiEngine__=function(t){var r,n,i,a,
   /* ---------- avvio ---------- */
   window.__t = { S: function () { return S; }, loadSample: loadSample, startBuild: startBuild, built: function () { return built; }, go: function (n) { S.step = n; render(); } };
   (async function () {
-    try { var raw = ls("rimb_state"); if (raw) { var o = JSON.parse(raw); if (o && o.cats && o.ts && Date.now() - o.ts > 30 * 86400000) { ls("rimb_state", null); idbClear(); } else if (o && o.cats) { S = Object.assign(fresh(), o); S.limiteMb = 20; if (OLD_DEST.indexOf(S.dest) >= 0) { S.dest = DEST; S.cc = CC; } var all = await idbAll(); for (var i = 0; i < all.length; i++) { var r = all[i], ph = { id: r.id, blob: r.blob, name: r.name, type: r.type, pdf: r.type === "application/pdf", rot: r.rot || 0, cache: {}, thumb: "" }; photos[ph.id] = ph; await prepThumb(ph); } S.cats.forEach(function (c) { c.voci.forEach(function (v) { v.foto = v.foto.filter(function (id) { return photos[id]; }); }); }); if (S.step === 3) S.step = 2; } } } catch (e) { S = fresh(); }
+    try { var raw = ls(KEY); if (raw) { var o = JSON.parse(raw); if (o && o.cats && o.ts && Date.now() - o.ts > 30 * 86400000) { ls(KEY, null); idbClear(); } else if (o && o.cats && o.prof && o.prof !== PROFILE.k) { S = fresh(); } else if (o && o.cats) { S = Object.assign(fresh(), o); S.limiteMb = 20; if (OLD_DEST.indexOf(S.dest) >= 0 || (!S.dest && !S.cc)) { S.dest = DEST; S.cc = CC; } var all = await idbAll(); for (var i = 0; i < all.length; i++) { var r = all[i], ph = { id: r.id, blob: r.blob, name: r.name, type: r.type, pdf: r.type === "application/pdf", rot: r.rot || 0, cache: {}, thumb: "" }; photos[ph.id] = ph; await prepThumb(ph); } S.cats.forEach(function (c) { c.voci.forEach(function (v) { v.foto = v.foto.filter(function (id) { return photos[id]; }); }); }); if (S.step === 3) S.step = 2; } } } catch (e) { S = fresh(); }
     try { document.title = PROFILE.h1; var hh = $("appH1"); if (hh) hh.textContent = PROFILE.h1; } catch (e) {}
     if (!S.nm && !S.cg && S.nome) { var pp = S.nome.trim().split(/\s+/); S.cg = pp.length > 1 ? pp.pop() : ""; S.nm = pp.join(" ") || S.cg; if (pp.length === 0 && S.cg) { S.nm = S.cg; S.cg = ""; } save(); }
     render();
