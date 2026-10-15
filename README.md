@@ -7,3 +7,4 @@ Funziona nel dispositivo: foto, importi e IBAN non vengono caricati su nessun se
 - `sw.js`, `manifest.json`, `icon*.png`: installazione e uso offline
 
 Per aggiornare l'app: sostituire `index.html` e `sw.js` e cambiare il numero `rimborsi-vN` in `sw.js`.
+
